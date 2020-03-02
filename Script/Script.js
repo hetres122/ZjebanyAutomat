@@ -4,8 +4,8 @@ const automat = {
 
     produkty() {
 
-        var btn = document.querySelector(".btn");
-        btn = document.addEventListener('click', (event) => {
+        const btn = document.querySelector(".btn");
+        btn.addEventListener('click', (event) => {
             console.log("1");
 
         });
