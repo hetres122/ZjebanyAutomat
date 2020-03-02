@@ -3,11 +3,13 @@ const automat = {
     cena: 0,
 
     produkty() {
-
-        const btn = document.querySelector(".btn");
+        const newProduct = document.forms[0];
+        const newProductPrice = document.querySelector("#price");
+        const btn = document.querySelector('.btn');
         btn.addEventListener('click', (event) => {
-            console.log("1");
 
+            console.log(newProduct);
+            console.log(newProductPrice);
         });
     },
 
