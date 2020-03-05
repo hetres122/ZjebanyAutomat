@@ -1,47 +1,75 @@
-#caly {
-    width: 550px;
-    line-height: 30px;
-    position: fixed;
-    left: -500px;
-    transition: 1s;
-}
-
-#caly:hover {
+.page1 {
+    position: absolute;
+    top: 0;
     left: 0;
+    bottom: 0;
+    right: 0;
+    width: auto;
+    height: auto;
+    background-color: lightgray;
 }
 
-#blok1 {
-    float: left;
-    width: 500px;
+.page2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: auto;
+    height: auto;
+    background-color: lightgray;
+    display: none;
 }
 
-#blok2 {
-    float: left;
-    width: 50px;
+.page3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: auto;
+    height: auto;
+    background-color: lightgray;
+    display: none;
 }
 
-#blok_na_zawartosc {
-    background-color: #FDD700;
-    border: 3px solid #000;
-    border-left: none;
-    border-bottom-right-radius: 6px;
+.pA {
+    color: black;
+    width: fit-content;
+    font-family: 'Times New Roman', Times, serif;
 }
 
-#zawartosc {
-    margin: 0;
-    padding: 5px;
-    height: 300px;
-    overflow: auto;
+.pA:hover {
+    color: grey;
+    font-family: 'Times New Roman', Times, serif;
 }
 
-#uchwyt {
-    text-align: center;
-    font-weight: bold;
-    color: #FFF;
-    background-color: #000;
-    border-radius: 0 6px 6px 0;
+.Automat2 {
+    color: black;
+    width: fit-content;
+    font-family: 'Times New Roman', Times, serif;
 }
 
-#uchwyt:hover {
-    cursor: pointer;
+.Automat1:hover {
+    color: gray;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.login {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    width: fit-content;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.Automat2 {
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.Automat2:hover {
+    color: gray;
+    font-family: 'Times New Roman', Times, serif;
 }
