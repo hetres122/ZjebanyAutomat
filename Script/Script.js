@@ -6,8 +6,13 @@ function Pproduct(product, productPrice, quantity, id) {
 }
 
 const automat = {
-
-
+    showProduct0: 0,
+    showProduct1: 0,
+    showProduct2: 0,
+    showProduct3: 0,
+    showProduct4: 0,
+    showProduct5: 0,
+    showPrice: 0,
     productAll: new Array(),
     loginAdmin: "root",
     passwordAdmin: "root",
@@ -82,12 +87,12 @@ const automat = {
         var newQuantity = 0;
 
         const add = document.querySelector('.add');
-        var showProduct0 = document.querySelector(".p0");
-        var showProduct1 = document.querySelector(".p1");
-        var showProduct2 = document.querySelector(".p2");
-        var showProduct3 = document.querySelector(".p3");
-        var showProduct4 = document.querySelector(".p4");
-        var showProduct5 = document.querySelector(".p5");
+        this.showProduct0 = document.querySelector(".p0");
+        this.showProduct1 = document.querySelector(".p1");
+        this.showProduct2 = document.querySelector(".p2");
+        this.showProduct3 = document.querySelector(".p3");
+        this.showProduct4 = document.querySelector(".p4");
+        this.showProduct5 = document.querySelector(".p5");
 
         var showProduct0a = document.querySelector(".pa0");
         var showProduct1a = document.querySelector(".pa1");
@@ -109,28 +114,35 @@ const automat = {
             console.log(this.productAll[1]);
             switch (i) {
                 case 0:
-                    showProduct0.innerHTML = this.productAll[i]["product"] + "<br>" + "Price:" + this.productAll[i]["productPrice"] + "<br>" + "ID:" + i;
+                    this.showProduct0.innerHTML = this.productAll[i]["product"] + "<br>" + "Price:" + this.productAll[i]["productPrice"] + "<br>" + "ID:" + i;
                     showProduct0a.innerHTML = this.productAll[i]["product"] + "<br>" + "Price:" + this.productAll[i]["productPrice"] + "<br>" + "ID:" + i;
-
+                    this.showProduct0.id = i;
+                    console.log(this.showProduct0.id);
+                    this.showProduct1.value = this.productAll[i]["productPrice"];
                     break;
                 case 1:
-                    showProduct1.innerHTML = this.productAll[i]["product"] + "<br>" + "Price:" + this.productAll[i]["productPrice"] + "<br>" + "ID:" + i;
+                    this.showProduct1.innerHTML = this.productAll[i]["product"] + "<br>" + "Price:" + this.productAll[i]["productPrice"] + "<br>" + "ID:" + i;
                     showProduct1a.innerHTML = this.productAll[i]["product"] + "<br>" + "Price:" + this.productAll[i]["productPrice"] + "<br>" + "ID:" + i;
+                    this.showProduct1.id = i;
                     break;
                 case 2:
-                    showProduct2.innerHTML = this.productAll[i]["product"] + "<br>" + "Price:" + this.productAll[i]["productPrice"] + "<br>" + "ID:" + i;
+                    this.showProduct2.id = i;
+                    this.showProduct2.innerHTML = this.productAll[i]["product"] + "<br>" + "Price:" + this.productAll[i]["productPrice"] + "<br>" + "ID:" + i;
                     showProduct2a.innerHTML = this.productAll[i]["product"] + "<br>" + "Price:" + this.productAll[i]["productPrice"] + "<br>" + "ID:" + i;
                     break;
                 case 3:
-                    showProduct3.innerHTML = this.productAll[i]["product"] + "<br>" + "Price:" + this.productAll[i]["productPrice"] + "<br>" + "ID:" + i;
+                    this.showProduct3.id = i;
+                    this.showProduct3.innerHTML = this.productAll[i]["product"] + "<br>" + "Price:" + this.productAll[i]["productPrice"] + "<br>" + "ID:" + i;
                     showProduct3a.innerHTML = this.productAll[i]["product"] + "<br>" + "Price:" + this.productAll[i]["productPrice"] + "<br>" + "ID:" + i;
                     break;
                 case 4:
-                    showProduct4.innerHTML = this.productAll[i]["product"] + "<br>" + "Price:" + this.productAll[i]["productPrice"] + "<br>" + "ID:" + i;
+                    this.showProduct4.id = i;
+                    this.showProduct4.innerHTML = this.productAll[i]["product"] + "<br>" + "Price:" + this.productAll[i]["productPrice"] + "<br>" + "ID:" + i;
                     showProduct4a.innerHTML = this.productAll[i]["product"] + "<br>" + "Price:" + this.productAll[i]["productPrice"] + "<br>" + "ID:" + i;
                     break;
                 case 5:
-                    showProduct5.innerHTML = this.productAll[i]["product"] + "<br>" + "Price:" + this.productAll[i]["productPrice"] + "<br>" + "ID:" + i;
+                    this.showProduct5.id = i;
+                    this.showProduct5.innerHTML = this.productAll[i]["product"] + "<br>" + "Price:" + this.productAll[i]["productPrice"] + "<br>" + "ID:" + i;
                     showProduct5a.innerHTML = this.productAll[i]["product"] + "<br>" + "Price:" + this.productAll[i]["productPrice"] + "<br>" + "ID:" + i;
                     break;
 
@@ -142,9 +154,7 @@ const automat = {
 
         });
 
-        showProduct1.addEventListener('click', (event) => {
 
-        });
 
     },
     dodwanie() {
@@ -182,8 +192,94 @@ const automat = {
             this.showVar.innerText = this.sum;
         });
     },
+    select() {
+        this.showProduct0 = document.querySelector(".p0");
+        this.showProduct1 = document.querySelector(".p1");
+        this.showProduct2 = document.querySelector(".p2");
+        this.showProduct3 = document.querySelector(".p3");
+        this.showProduct4 = document.querySelector(".p4");
+        this.showProduct5 = document.querySelector(".p5");
+        var showElement = document.getElementById('showElement');
+        var zero = document.getElementById('0');
+        var one = document.getElementById('1');
+        const two = document.getElementById('2');
+        const three = document.getElementById('3');
+        const four = document.getElementById('4');
+        const five = document.getElementById('5');
+        const six = document.getElementById('6');
+        const seven = document.getElementById('7');
+        const eight = document.getElementById('8');
+        const nine = document.getElementById('9');
+        const c = document.getElementById('C');
+        const OK = document.getElementById('OK');
+        this.showPrice = document.getElementById('showPrice');
+        zero.addEventListener('click', (event) => {
+            showElement.innerText += 0;
+        });
+        one.addEventListener('click', (event) => {
+            showElement.innerText += 1;
+        });
+        two.addEventListener('click', (event) => {
+            showElement.innerText += 2;
+        });
+        three.addEventListener('click', (event) => {
+            showElement.innerText += 3;
+        });
+        four.addEventListener('click', (event) => {
+            showElement.innerText += 4;
+        });
+        five.addEventListener('click', (event) => {
+            showElement.innerText += 5;
+        });
+        six.addEventListener('click', (event) => {
+            showElement.innerText += 6;
+        });
+        seven.addEventListener('click', (event) => {
+            showElement.innerText += 7;
+        });
+        eight.addEventListener('click', (event) => {
+            showElement.innerText += 8;
+        });
+        nine.addEventListener('click', (event) => {
+            showElement.innerText += 9;
+        });
+        c.addEventListener('click', (event) => {
+            showElement.innerText = "";
+        });
+        OK.addEventListener('click', (event) => {
+            console.log(this.showProduct0.value);
+            switch (showElement) {
+                case this.showProduct0.id:
+                    this.showPrice.innerText = this.showProduct0.value;
+                    break;
+                case 1:
+
+                    break;
+                case 2:
+
+                    break;
+                case 3:
+
+                    break;
+                case 4:
+
+                    break;
+                case 5:
+
+                    break;
+
+
+                default:
+                    alert("Wrong ID")
+                    break;
+            }
+
+
+        });
+    },
 }
 
 automat.produkty();
 automat.controlPanel();
 automat.dodwanie();
+automat.select();
