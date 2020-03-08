@@ -80,20 +80,72 @@ const automat = {
         var newProduct = "";
         var newProductPrice = 0;
         var newQuantity = 0;
-        var newID = 0;
-        var ID = 0;
-        var quantity = 0;
-        var productPrice = 0;
-        var product = "";
+
         const add = document.querySelector('.add');
+        var showProduct0 = document.querySelector(".p0");
+        var showProduct1 = document.querySelector(".p1");
+        var showProduct2 = document.querySelector(".p2");
+        var showProduct3 = document.querySelector(".p3");
+        var showProduct4 = document.querySelector(".p4");
+        var showProduct5 = document.querySelector(".p5");
+
+        var showProduct0a = document.querySelector(".pa0");
+        var showProduct1a = document.querySelector(".pa1");
+        var showProduct2a = document.querySelector(".pa2");
+        var showProduct3a = document.querySelector(".pa3");
+        var showProduct4a = document.querySelector(".pa4");
+        var showProduct5a = document.querySelector(".pa5");
+
+
+        var i = 0;
         add.addEventListener('click', (event) => {
             newProduct = document.querySelector("#product");
             newProductPrice = document.querySelector("#price");
             newQuantity = document.querySelector("#quantity");
-            newID = document.querySelector("#id");
-            this.productAll.push(new Pproduct(newProduct.value, newProductPrice.value, newQuantity.value, newID.value));
+            this.productAll.push(new Pproduct(newProduct.value, newProductPrice.value, newQuantity.value, i));
+
+
             console.log(this.productAll[0]);
+            console.log(this.productAll[1]);
+            switch (i) {
+                case 0:
+                    showProduct0.innerHTML = this.productAll[i]["product"] + "<br>" + "Price:" + this.productAll[i]["productPrice"] + "<br>" + "ID:" + i;
+                    showProduct0a.innerHTML = this.productAll[i]["product"] + "<br>" + "Price:" + this.productAll[i]["productPrice"] + "<br>" + "ID:" + i;
+
+                    break;
+                case 1:
+                    showProduct1.innerHTML = this.productAll[i]["product"] + "<br>" + "Price:" + this.productAll[i]["productPrice"] + "<br>" + "ID:" + i;
+                    showProduct1a.innerHTML = this.productAll[i]["product"] + "<br>" + "Price:" + this.productAll[i]["productPrice"] + "<br>" + "ID:" + i;
+                    break;
+                case 2:
+                    showProduct2.innerHTML = this.productAll[i]["product"] + "<br>" + "Price:" + this.productAll[i]["productPrice"] + "<br>" + "ID:" + i;
+                    showProduct2a.innerHTML = this.productAll[i]["product"] + "<br>" + "Price:" + this.productAll[i]["productPrice"] + "<br>" + "ID:" + i;
+                    break;
+                case 3:
+                    showProduct3.innerHTML = this.productAll[i]["product"] + "<br>" + "Price:" + this.productAll[i]["productPrice"] + "<br>" + "ID:" + i;
+                    showProduct3a.innerHTML = this.productAll[i]["product"] + "<br>" + "Price:" + this.productAll[i]["productPrice"] + "<br>" + "ID:" + i;
+                    break;
+                case 4:
+                    showProduct4.innerHTML = this.productAll[i]["product"] + "<br>" + "Price:" + this.productAll[i]["productPrice"] + "<br>" + "ID:" + i;
+                    showProduct4a.innerHTML = this.productAll[i]["product"] + "<br>" + "Price:" + this.productAll[i]["productPrice"] + "<br>" + "ID:" + i;
+                    break;
+                case 5:
+                    showProduct5.innerHTML = this.productAll[i]["product"] + "<br>" + "Price:" + this.productAll[i]["productPrice"] + "<br>" + "ID:" + i;
+                    showProduct5a.innerHTML = this.productAll[i]["product"] + "<br>" + "Price:" + this.productAll[i]["productPrice"] + "<br>" + "ID:" + i;
+                    break;
+
+                default:
+                    alert("Brak miejsca!");
+                    break;
+            }
+            i++;
+
         });
+
+        showProduct1.addEventListener('click', (event) => {
+
+        });
+
     },
     dodwanie() {
 
