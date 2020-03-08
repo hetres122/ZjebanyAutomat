@@ -1,13 +1,38 @@
+function Pproduct(product, productPrice, quantity, id) {
+    this.product = product;
+    this.productPrice = productPrice;
+    this.quantity = quantity;
+    this.id = id;
+}
+
 const automat = {
+
+
+    productAll: new Array(),
     loginAdmin: "root",
     passwordAdmin: "root",
-    products: {
-        blackCoffee: {
-            id: 0,
-            value: 2.5,
+    showVar: 0,
+    sum: 0,
+    rest: {
+        half: {
+            value: 0.5,
+            quantity: 0
+        },
+        one: {
+            value: 1,
+            quantity: 100
+        },
+        two: {
+            value: 2,
+            quantity: 100
+        },
+        five: {
+            value: 5,
             quantity: 100
         },
     },
+
+
     controlPanel() {
         var move = document.querySelector('.pA');
         var automatClick = document.querySelector('.Automat1')
@@ -42,7 +67,6 @@ const automat = {
                 alert("Wrong password");
 
             }
-
         });
         automatClick2.addEventListener('click', (event) => {
             page3.style.display = "none";
@@ -67,17 +91,8 @@ const automat = {
             newProductPrice = document.querySelector("#price");
             newQuantity = document.querySelector("#quantity");
             newID = document.querySelector("#id");
-            ID = newID.value;
-            quantity = newQuantity.value;
-            productPrice = newProductPrice.value;
-            product = newProduct.value;
-
-            console.log(this.products);
-            this.products.product = {};
-            // this.products.product.id = +ID;
-            // this.products.product.value = +productPrice;
-            // this.products.product.quantity = +quantity;
-            console.log(this.products);
+            this.productAll.push(new Pproduct(newProduct.value, newProductPrice.value, newQuantity.value, newID.value));
+            console.log(this.productAll[0]);
         });
     },
     dodwanie() {
@@ -88,22 +103,35 @@ const automat = {
         const baton4 = document.querySelector('.b4');
 
         baton1.addEventListener('click', (event) => {
-
+            this.showVar = document.querySelector('.showVar');
+            this.rest.half.quantity++;
+            this.sum += this.rest.half.value;
+            this.showVar.innerText = this.sum;
         });
 
         baton2.addEventListener('click', (event) => {
-
+            this.showVar = document.querySelector('.showVar');
+            this.rest.one.quantity++;
+            this.sum += this.rest.one.value;
+            this.showVar.innerText = this.sum;
         });
 
         baton3.addEventListener('click', (event) => {
-
+            this.showVar = document.querySelector('.showVar');
+            this.rest.two.quantity++;
+            this.sum += this.rest.two.value;
+            this.showVar.innerText = this.sum;
         });
 
         baton4.addEventListener('click', (event) => {
-
+            this.showVar = document.querySelector('.showVar');
+            this.rest.five.quantity++;
+            this.sum += this.rest.five.value;
+            this.showVar.innerText = this.sum;
         });
     },
 }
+
 automat.produkty();
 automat.controlPanel();
 automat.dodwanie();
