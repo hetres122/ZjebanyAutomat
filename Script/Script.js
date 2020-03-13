@@ -277,6 +277,7 @@ const automat = {
 
         });
         OK.addEventListener('click', (event) => {
+            showElement.innerText = "";
 
 
             switch (l) {
@@ -370,66 +371,66 @@ const automat = {
 
         if (this.sum >= this.price) {
             this.sum -= this.price;
-            while (this.sum !== 0) {
-                if (this.sum >= this.rest.five.value) {
-                    this.sum -= this.rest.five.value;
-                    this.rest.five.quantity--;
-                    showRest = document.querySelector('.showRest0');
-                    showRest.innerText++;
+
+            while (this.sum >= this.rest.five.value) {
+                this.sum -= this.rest.five.value;
+                this.rest.five.quantity--;
+                showRest = document.querySelector('.showRest0');
+                showRest.innerText++;
 
 
-                }
-                if (this.sum >= this.rest.two.value) {
-                    this.sum -= this.rest.two.value;
-                    this.rest.two.quantity--;
-                    showRest = document.querySelector('.showRest1');
-                    showRest.innerText++;
-
-                }
-                if (this.sum >= this.rest.one.value) {
-                    this.sum -= this.rest.one.value;
-                    this.rest.one.quantity--;
-                    showRest = document.querySelector('.showRest2');
-                    showRest.innerText++;
-
-                }
-                if (this.sum >= this.rest.half.value) {
-                    this.sum -= this.rest.half.value;
-                    this.rest.half.quantity--;
-                    showRest = document.querySelector('.showRest3');
-                    showRest.innerText++;
-
-                }
             }
+            while (this.sum >= this.rest.two.value) {
+                this.sum -= this.rest.two.value;
+                this.rest.two.quantity--;
+                showRest = document.querySelector('.showRest1');
+                showRest.innerText++;
+
+            }
+            while (this.sum >= this.rest.one.value) {
+                this.sum -= this.rest.one.value;
+                this.rest.one.quantity--;
+                showRest = document.querySelector('.showRest2');
+                showRest.innerText++;
+
+            }
+            while (this.sum >= this.rest.half.value) {
+                this.sum -= this.rest.half.value;
+                this.rest.half.quantity--;
+                showRest = document.querySelector('.showRest3');
+                showRest.innerText++;
+
+            }
+
 
         } else {
 
-            while (this.sum !== 0) {
-                if (this.sum >= this.rest.five.value) {
-                    this.sum -= this.rest.five.value;
-                    this.rest.five.quantity--;
-                    showRest = document.querySelector('.showRest0');
-                    showRest.innerText++;
-                }
-                if (this.sum >= this.rest.two.value) {
-                    this.sum -= this.rest.two.value;
-                    this.rest.two.quantity--;
-                    showRest = document.querySelector('.showRest1');
-                    showRest.innerText++;
-                }
-                if (this.sum >= this.rest.one.value) {
-                    this.sum -= this.rest.one.value;
-                    this.rest.one.quantity--;
-                    showRest = document.querySelector('.showRest2');
-                    showRest.innerText++;
-                }
-                if (this.sum >= this.rest.half.value) {
-                    this.sum -= this.rest.half.value;
-                    this.rest.half.quantity--;
-                    showRest = document.querySelector('.showRest3');
-                    showRest.innerText++;
-                }
+
+            while (this.sum >= this.rest.five.value) {
+                this.sum -= this.rest.five.value;
+                this.rest.five.quantity--;
+                showRest = document.querySelector('.showRest0');
+                showRest.innerText++;
             }
+            while (this.sum >= this.rest.two.value) {
+                this.sum -= this.rest.two.value;
+                this.rest.two.quantity--;
+                showRest = document.querySelector('.showRest1');
+                showRest.innerText++;
+            }
+            while (this.sum >= this.rest.one.value) {
+                this.sum -= this.rest.one.value;
+                this.rest.one.quantity--;
+                showRest = document.querySelector('.showRest2');
+                showRest.innerText++;
+            }
+            while (this.sum >= this.rest.half.value) {
+                this.sum -= this.rest.half.value;
+                this.rest.half.quantity--;
+                showRest = document.querySelector('.showRest3');
+                showRest.innerText++;
+            }
+
         }
     },
     take() {
