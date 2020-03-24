@@ -6,6 +6,7 @@ function Pproduct(product, productPrice, quantity, id) {
 }
 
 const automat = {
+    producthistory: "",
     price: 0,
     showProduct0: "",
     showProduct1: 0,
@@ -205,6 +206,10 @@ const automat = {
         });
     },
     select() {
+        const now = new Date();
+        const html = `
+        ${now.getHours()} : ${now.getMinutes()} : ${now.getSeconds()} || ${now.getDate()} . ${now.getMonth()+1} . ${now.getFullYear()}r.
+        `;
 
         this.showProduct0 = document.querySelector(".p0");
         this.showProduct1 = document.querySelector(".p1");
@@ -227,6 +232,8 @@ const automat = {
         const c = document.getElementById('C');
         const OK = document.getElementById('OK');
         this.showPrice = document.getElementById('showPrice');
+        const history = document.getElementById('history')
+
         zero.addEventListener('click', (event) => {
             showElement.innerText += 0;
             l += 0;
@@ -277,13 +284,21 @@ const automat = {
 
         });
         OK.addEventListener('click', (event) => {
-            showElement.innerText = "";
+            showElement.innerText = +"";
 
+            console.log(this.showProduct0.innerText);
+
+
+            this.producthistory += this.showProduct0.innerText;
+            this.producthistory += html;
+            history.innerText += this.producthistory;
+            console.log(this.producthistory);
 
             switch (l) {
                 case this.showProduct0.id:
                     this.price += +this.showProduct0.value
                     this.showPrice.innerText = this.price;
+
 
                     break;
                 case this.showProduct1.id:
