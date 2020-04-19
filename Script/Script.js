@@ -6,6 +6,7 @@ function Pproduct(product, productPrice, quantity, id) {
 }
 
 const automat = {
+    history: "",
     producthistory: "",
     price: 0,
     showProduct0: "",
@@ -103,6 +104,21 @@ const automat = {
         var showProduct4a = document.querySelector(".pa4");
         var showProduct5a = document.querySelector(".pa5");
 
+        var deleteProduct1 = document.getElementById("DP1");
+        var deleteProduct2 = document.getElementById("DP2");
+        var deleteProduct3 = document.getElementById("DP3");
+        var deleteProduct4 = document.getElementById("DP4");
+        var deleteProduct5 = document.getElementById("DP5");
+        var deleteProduct6 = document.getElementById("DP6");
+
+        var flag1 = false;
+        var flag2 = false;
+        var flag3 = false;
+        var flag4 = false;
+        var flag5 = false;
+        var flag6 = false;
+
+
 
         var i = 0;
         add.addEventListener('click', (event) => {
@@ -113,50 +129,56 @@ const automat = {
 
 
 
-            switch (i) {
-                case 0:
+
+            switch (false) {
+                case flag1:
                     this.showProduct0.innerHTML = this.productAll[i]["product"] + "<br>" + "Price:" + this.productAll[i]["productPrice"] + "<br>" + "ID:" + i;
                     showProduct0a.innerHTML = this.productAll[i]["product"] + "<br>" + "Price:" + this.productAll[i]["productPrice"] + "<br>" + "ID:" + i;
                     this.showProduct0.setAttribute("id", i);
                     this.showProduct0.value = this.productAll[i]["productPrice"];
+                    flag1 = true;
 
 
 
                     break;
-                case 1:
+                case flag2:
                     this.showProduct1.innerHTML = this.productAll[i]["product"] + "<br>" + "Price:" + this.productAll[i]["productPrice"] + "<br>" + "ID:" + i;
                     showProduct1a.innerHTML = this.productAll[i]["product"] + "<br>" + "Price:" + this.productAll[i]["productPrice"] + "<br>" + "ID:" + i;
                     this.showProduct1.setAttribute("id", i);
                     this.showProduct1.value = this.productAll[i]["productPrice"];
-
+                    flag2 = true;
                     break;
-                case 2:
+                case flag3:
 
                     this.showProduct2.innerHTML = this.productAll[i]["product"] + "<br>" + "Price:" + this.productAll[i]["productPrice"] + "<br>" + "ID:" + i;
                     showProduct2a.innerHTML = this.productAll[i]["product"] + "<br>" + "Price:" + this.productAll[i]["productPrice"] + "<br>" + "ID:" + i;
                     this.showProduct2.setAttribute("id", i);
                     this.showProduct2.value = this.productAll[i]["productPrice"];
+                    flag3 = true;
                     break;
-                case 3:
+                case flag4:
 
                     this.showProduct3.innerHTML = this.productAll[i]["product"] + "<br>" + "Price:" + this.productAll[i]["productPrice"] + "<br>" + "ID:" + i;
                     showProduct3a.innerHTML = this.productAll[i]["product"] + "<br>" + "Price:" + this.productAll[i]["productPrice"] + "<br>" + "ID:" + i;
                     this.showProduct3.setAttribute("id", i);
                     this.showProduct3.value = this.productAll[i]["productPrice"];
+                    flag4 = true;
                     break;
-                case 4:
+                case flag5:
 
                     this.showProduct4.innerHTML = this.productAll[i]["product"] + "<br>" + "Price:" + this.productAll[i]["productPrice"] + "<br>" + "ID:" + i;
                     showProduct4a.innerHTML = this.productAll[i]["product"] + "<br>" + "Price:" + this.productAll[i]["productPrice"] + "<br>" + "ID:" + i;
                     this.showProduct4.setAttribute("id", i);
                     this.showProduct4.value = this.productAll[i]["productPrice"];
+                    flag5 = true;
                     break;
-                case 5:
+                case flag6:
 
                     this.showProduct5.innerHTML = this.productAll[i]["product"] + "<br>" + "Price:" + this.productAll[i]["productPrice"] + "<br>" + "ID:" + i;
                     showProduct5a.innerHTML = this.productAll[i]["product"] + "<br>" + "Price:" + this.productAll[i]["productPrice"] + "<br>" + "ID:" + i;
                     this.showProduct5.setAttribute("id", i);
                     this.showProduct5.value = this.productAll[i]["productPrice"];
+                    flag6 = true;
                     break;
 
                 default:
@@ -166,8 +188,36 @@ const automat = {
             i++;
 
         });
-
-
+        deleteProduct1.addEventListener('click', (event) => {
+            this.showProduct0.innerHTML = "------";
+            showProduct0a.innerHTML = "------";
+            flag1 = false;
+        });
+        deleteProduct2.addEventListener('click', (event) => {
+            this.showProduct1.innerHTML = "------";
+            showProduct1a.innerHTML = "------";
+            flag2 = false;
+        });
+        deleteProduct3.addEventListener('click', (event) => {
+            this.showProduct2.innerHTML = "------";
+            showProduct2a.innerHTML = "------";
+            flag3 = false;
+        });
+        deleteProduct4.addEventListener('click', (event) => {
+            this.showProduct3.innerHTML = "------";
+            showProduct3a.innerHTML = "------";
+            flag4 = false;
+        });
+        deleteProduct5.addEventListener('click', (event) => {
+            this.showProduct4.innerHTML = "------";
+            showProduct4a.innerHTML = "------";
+            flag5 = false;
+        });
+        deleteProduct6.addEventListener('click', (event) => {
+            this.showProduct5.innerHTML = "------";
+            showProduct5a.innerHTML = "------";
+            flag6 = false;
+        });
 
     },
     dodwanie() {
@@ -206,8 +256,9 @@ const automat = {
         });
     },
     select() {
-        const now = new Date();
-        const html = `
+
+        var now = new Date();
+        var html = `
         ${now.getHours()} : ${now.getMinutes()} : ${now.getSeconds()} || ${now.getDate()} . ${now.getMonth()+1} . ${now.getFullYear()}r.
         `;
 
@@ -232,7 +283,7 @@ const automat = {
         const c = document.getElementById('C');
         const OK = document.getElementById('OK');
         this.showPrice = document.getElementById('showPrice');
-        const history = document.getElementById('history')
+        this.history = document.getElementById('history');
 
         zero.addEventListener('click', (event) => {
             showElement.innerText += 0;
@@ -286,49 +337,87 @@ const automat = {
         OK.addEventListener('click', (event) => {
             showElement.innerText = +"";
 
-            console.log(this.showProduct0.innerText);
 
 
-            this.producthistory += this.showProduct0.innerText;
-            this.producthistory += html;
-            history.innerText += this.producthistory;
-            console.log(this.producthistory);
+
+
 
             switch (l) {
                 case this.showProduct0.id:
+                    now = new Date();
+                    html = `
+                            ${now.getHours()} : ${now.getMinutes()} : ${now.getSeconds()} || ${now.getDate()} . ${now.getMonth()+1} . ${now.getFullYear()}r.
+                            `;
                     this.price += +this.showProduct0.value
                     this.showPrice.innerText = this.price;
 
+                    this.producthistory += this.showProduct0.innerText;
+                    this.producthistory += html;
 
                     break;
                 case this.showProduct1.id:
+                    now = new Date();
+                    html = `
+                            ${now.getHours()} : ${now.getMinutes()} : ${now.getSeconds()} || ${now.getDate()} . ${now.getMonth()+1} . ${now.getFullYear()}r.
+                            `;
                     this.price += +this.showProduct1.value
                     this.showPrice.innerText = this.price;
+
+                    this.producthistory += this.showProduct1.innerText;
+                    this.producthistory += html;
                     break;
                 case this.showProduct2.id:
+                    now = new Date();
+                    html = `
+                                ${now.getHours()} : ${now.getMinutes()} : ${now.getSeconds()} || ${now.getDate()} . ${now.getMonth()+1} . ${now.getFullYear()}r.
+                                `;
                     this.price += +this.showProduct2.value
                     this.showPrice.innerText = this.price;
+
+                    this.producthistory += this.showProduct2.innerText;
+                    this.producthistory += html;
                     break;
                 case this.showProduct3.id:
+                    now = new Date();
+                    html = `
+                                ${now.getHours()} : ${now.getMinutes()} : ${now.getSeconds()} || ${now.getDate()} . ${now.getMonth()+1} . ${now.getFullYear()}r.
+                                `;
                     this.price += +this.showProduct3.value
                     this.showPrice.innerText = this.price;
+
+                    this.producthistory += this.showProduct3.innerText;
+                    this.producthistory += html;
                     break;
                 case this.showProduct4.id:
+                    now = new Date();
+                    html = `
+                                ${now.getHours()} : ${now.getMinutes()} : ${now.getSeconds()} || ${now.getDate()} . ${now.getMonth()+1} . ${now.getFullYear()}r.
+                                `;
                     this.price += +this.showProduct4.value
                     this.showPrice.innerText = this.price;
+
+                    this.producthistory += this.showProduct4.innerText;
+                    this.producthistory += html;
                     break;
                 case this.showProduct5.id:
+                    now = new Date();
+                    html = `
+                                ${now.getHours()} : ${now.getMinutes()} : ${now.getSeconds()} || ${now.getDate()} . ${now.getMonth()+1} . ${now.getFullYear()}r.
+                                `;
                     this.price += +this.showProduct5.value
                     this.showPrice.innerText = this.price;
+
+                    this.producthistory += this.showProduct5.innerText;
+                    this.producthistory += html;
                     break;
 
 
                 default:
                     alert("Wrong ID")
                     break;
+
+
             }
-
-
         });
     },
     dodwanie() {
@@ -377,12 +466,11 @@ const automat = {
             showVar.innerText = 0;
             this.price = 0;
 
-
-
         });
     },
 
     wydawanie() {
+        this.history = document.getElementById('history');
 
         if (this.sum >= this.price) {
             this.sum -= this.price;
@@ -416,7 +504,8 @@ const automat = {
                 showRest.innerText++;
 
             }
-
+            this.history.insertAdjacentHTML("beforeend", this.producthistory);
+            this.producthistory = "";
 
         } else {
 
@@ -445,7 +534,7 @@ const automat = {
                 showRest = document.querySelector('.showRest3');
                 showRest.innerText++;
             }
-
+            this.producthistory = "";
         }
     },
     take() {
